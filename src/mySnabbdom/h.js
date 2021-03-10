@@ -29,6 +29,6 @@ export default function (sel, data, c) {
     return VNode (sel, data, children, undefined, undefined)
   } else {
     //第四种情况 第三个参数啥也不是
-    throw Error ('请正确传递第三个参数')
+    throw Error ('请正确传递第三个参数，第三个参数应为数组或至少包含一个h函数')
   }
 }

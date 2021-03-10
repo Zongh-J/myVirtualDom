@@ -1,36 +1,12 @@
-//感受diff算法
-import { init } from 'snabbdom/init'
-import { classModule } from 'snabbdom/modules/class'
-import { propsModule } from 'snabbdom/modules/props'
-import { styleModule } from 'snabbdom/modules/style'
-import { eventListenersModule } from 'snabbdom/modules/eventlisteners'
-import { h } from 'snabbdom/h' 
+import h from './mySnabbdom/h.js'
+import dispatch from './mySnabbdom/diapatch.js' 
 
-const containerNode = document.getElementById ('container')
-const btnNode = document.getElementById ('btn')
 
-//创建patch函数
-const patch = init([classModule, propsModule, styleModule, eventListenersModule])
+const mySnabbdom = h('h1', {}, '我是一个盒子')
+//const mySnabbom3 = h('div', {}, h('span', {}, 'xx'))
 
-//创建虚拟节点
-const myVirtualNode1 = h ('ul', {}, [
-  h ('li', {class: {li: true}, key:'A'}, 'A'),
-  h ('li', {class: {li: true}, key:'B'}, 'B'),
-  h ('li', {class: {li: true}, key:'C'}, 'C'),
-  h ('li', {class: {li: true}, key:'D'}, 'D'),
-])
+//获取container元素
+const container = document.getElementById ('container')
 
-//更新虚拟节点1
-const myVirtualNode2 = h ('ul', {}, [
-  h ('li', {class: {li: true}}, 'A'),
-  h ('li', {class: {li: true}, key:'B'}, 'B'),
-  h ('li', {class: {li: true}, key:'C'}, 'C'),
-  h ('li', {class: {li: true}, key: 'D'}, 'D')
-])
-
-btnNode.addEventListener ('click', function () { 
-  patch (myVirtualNode1, myVirtualNode2)
-})
-
-//虚拟节点上树
-patch (containerNode, myVirtualNode1)
+//调用dispatch函数
+dispatch (container, mySnabbdom)
