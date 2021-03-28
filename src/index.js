@@ -1,18 +1,21 @@
 import h from './mySnabbdom/h.js'
-import dispatch from './mySnabbdom/diapatch.js' 
+import dispatch from './mySnabbdom/dispatch.js' 
 
 
-const mySnabbdom = h('h1', {}, '我是一个盒子')
+//const mySnabbdom = h('h1', {}, '我是一个盒子')
 //const mySnabbom3 = h('div', {}, h('span', {}, 'xx'))
 
-// const mySnabbdom = h('ul', {}, [
-//   h ('li', {}, '哈哈'),
-//   h ('li', {}, '嘻嘻')
-// ])
+const mySnabbdom = h('ul', {}, [
+  h('li', { key: 'A' }, 'A'),
+  h ('li', {key: 'B'}, 'B1'),
+  h('li', { key: 'C' }, 'CC1'),
+  
+])
 
-const mySnabbdom1 = h('h1', {}, [
-  h ('p', {}, '哈哈'),
-  h ('p', {}, '嘻嘻')
+const mySnabbdom1 = h('ul', {}, [
+  h('li', { key: 'A' }, 'A'),
+  h('li', { key: 'B' }, 'B2'),
+  h('li', { key: 'C' }, 'CC2'),
 ])
 
 
@@ -26,4 +29,4 @@ dispatch (container, mySnabbdom)
 
 btnNode.onclick = function () { 
   dispatch (mySnabbdom, mySnabbdom1)
- }
+}
