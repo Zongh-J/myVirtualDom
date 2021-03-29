@@ -7,15 +7,20 @@ import dispatch from './mySnabbdom/dispatch.js'
 
 const mySnabbdom = h('ul', {}, [
   h('li', { key: 'A' }, 'A'),
-  h ('li', {key: 'B'}, 'B1'),
-  h('li', { key: 'C' }, 'CC1'),
-  
+  h('li', { key: 'B' }, 'B'),
+  h('li', { key: 'C' }, 'C'),
+  h('li', { key: 'Q' }, 'Q'),
+  h ('li', {key: 'D'}, 'D'),
+  h ('li', {key: 'E'}, 'E'),
+
 ])
 
 const mySnabbdom1 = h('ul', {}, [
-  h('li', { key: 'A' }, 'A'),
-  h('li', { key: 'B' }, 'B2'),
-  h('li', { key: 'C' }, 'CC2'),
+  h('li', { key: 'E' }, 'E'),
+  h('li', { key: 'D' }, 'D'),
+  h('li', { key: 'C' }, 'C'),
+  h('li', { key: 'B' }, 'B'),
+  h('li', { key: 'A' }, 'A')
 ])
 
 
